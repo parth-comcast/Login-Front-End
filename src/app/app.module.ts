@@ -12,14 +12,15 @@ import { MessageComponent } from './messages/message.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { ProfileComponent } from './profile/profile.component';
 
 const routes = [
   {path: 'register', component: RegisterComponent},
   {path: 'message', component: MessageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'users', component: UserComponent},
-  {path: 'profile/:id', component: UserComponent}
-]
+  {path: 'profile/:id', component: ProfileComponent}
+];
 
 @NgModule({
   declarations: [
@@ -27,7 +28,8 @@ const routes = [
     MessageComponent,
     RegisterComponent,
     LoginComponent,
-    UserComponent
+    UserComponent,
+    ProfileComponent
   ],
   imports: [
     BrowserModule,
