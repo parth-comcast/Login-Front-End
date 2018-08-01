@@ -12,6 +12,7 @@ import { MessageComponent } from './messages/message.component';
 import { RegisterComponent } from './register/register.component';
 import { LoginComponent } from './login/login.component';
 import { UserComponent } from './user/user.component';
+import { PostComponent } from './post/post.component';
 import { ProfileComponent } from './profile/profile.component';
 
 const routes = [
@@ -19,6 +20,7 @@ const routes = [
   {path: 'message', component: MessageComponent},
   {path: 'login', component: LoginComponent},
   {path: 'users', component: UserComponent},
+  {path: '', component: PostComponent},
   {path: 'profile/:id', component: ProfileComponent}
 ];
 
@@ -29,6 +31,7 @@ const routes = [
     RegisterComponent,
     LoginComponent,
     UserComponent,
+    PostComponent,
     ProfileComponent
   ],
   imports: [
