@@ -1,15 +1,24 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { ActivatedRoute } from '@angular/router';
+import { Subscription } from 'rxjs/Rx';
+
 import { ApiService } from '../api.service';
 
 @Component({
   selector: 'app-message',
   templateUrl: 'message.component.html'
 })
-export class MessageComponent {
+export class MessageComponent implements OnInit{
 
-  constructor( private apiServices: ApiService) {}
+  private userId;
+  private subscription: Subscription[] = [];
+
+  constructor( private apiServices: ApiService, private route: ActivatedRoute) {}
 
   ngOnInit() {
-    this.apiServices.getMessages();
+    this.subscription.push(this.route.params.subscribe(params => {
+      this.userId = params['id'];
+    }));
+    this.apiServices.getMessages(this.userId);
   }
 }

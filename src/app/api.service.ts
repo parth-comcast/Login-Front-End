@@ -10,8 +10,8 @@ export class ApiService {
 
     constructor( private http: Http ) {}
 
-    getMessages() {
-        this.http.get(this.path + '/posts').subscribe(res => {
+    getMessages(userId) {
+        this.http.get(this.path + '/post/' + userId).subscribe(res => {
             this.messages = res.json();
         });
     }

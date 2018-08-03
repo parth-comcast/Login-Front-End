@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { Subscription } from 'rxjs';
+import { Subscription } from 'rxjs/Rx';
 
 import { ApiService } from '../api.service';
 
@@ -24,7 +24,6 @@ export class ProfileComponent implements OnInit, OnDestroy{
 
     this.subscription.push(this.apiServices.getProfile(this.userId).subscribe(data => {
       this.profile = data.json();
-      console.log(this.profile);
     }));
   }
 
